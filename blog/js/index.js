@@ -51,8 +51,9 @@ $(document).ready(function() {
 			url:"./blog/data/links.json",
 			dataType:"json",
 			success:function(data) {
+				$(".links .navfri").empty();
 				for (var i = data.length - 1; i >= 0; i--) {
-					$(".links .navfri").append('<li><a href="'+data[i].title+'" target="_blank">'+data[i].link+'</a></li>');
+					$(".links .navfri").append('<li><a href="'+data[i].link+'" target="_blank">'+data[i].title+'</a></li>');
 				};
 			}
 		});
