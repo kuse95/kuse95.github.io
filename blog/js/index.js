@@ -5,21 +5,19 @@ $(document).ready(function() {
 		url:"./blog/data/index.json",
 		dataType:"json",
 		success:function(data) {
-			console.log(data);
-			var newsHtml = "";
-			var blogurl;
+			var newsHtml,blogurl;
 			for (var i = data.news.length - 1; i >= 0; i--) {
-				console.log(data.news[i]);
 				blogurl = blogStaticUrl+data.news[i].year+"/"+data.news[i].month+"/"+data.news[i].day+"/"+data.news[i].filename;
 				if(data.news[i].ishot == "true"){
-					newsHtml+='<li class="fl hot">\
+					newsHtml='<li class="fl hot">\
 								<a href="'+blogurl+'">\
 									<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章插图">\
 									<span class="hot-close"></span>\
 								</a>\
-							</li>'
+							</li>';
+					$(".news").prepend(newsHtml);
 				}else{
-					newsHtml += '<li class="fl item">\
+					newsHtml= '<li class="fl item">\
 							<a href="'+blogurl+'">\
 								<span class="imgbox">\
 									<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章配图">\
@@ -40,10 +38,10 @@ $(document).ready(function() {
 									<p class="articleintro">'+data.news[i].desc+'</p>\
 								</div>\
 							</a>\
-						</li>'
+						</li>';
+					$(".news").append(newsHtml);
 				}	
 			};
-			$(".news").append(newsHtml);
 		}
 	});
 });
