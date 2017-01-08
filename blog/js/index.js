@@ -5,9 +5,11 @@ $(document).ready(function() {
 		url:"./blog/data/index.json",
 		dataType:"json",
 		success:function(data) {
+			console.log(data);
 			var newsHtml = "";
 			var blogurl;
 			for (var i = data.news.length - 1; i >= 0; i--) {
+				console.log(data.news[i]);
 				blogurl = blogStaticUrl+data.news[i].year+data.news[i].month+data.news[i].day+data.news[i].filename;
 				if(data.news[i].ishot){
 					newsHtml+='<li class="fl hot">\
