@@ -1,0 +1,40 @@
+/*默认样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0}
+body, button, input, select, textarea { font: tahoma, arial, \5b8b\4f53, sans-serif; line-height:1.5 }
+h1, h2, h3, h4, h5, h6 { font-size: 100% }
+em{ font-style: normal }
+ul, ol { list-style: none }
+a { text-decoration: none;cursor: pointer; }
+fieldset, img { border: 0 }
+button, input, select, textarea { font-size: 100% }
+table { border-collapse: collapse; border-spacing: 0 }
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden }
+.clearfix{*zoom:1 }
+.htxt{height:0;display:block;overflow:hidden }
+body{ font-family:'Microsoft Yahei'; background-color: #fafafa; font-size: 100% }
+img{max-width: 100%;}
+.fl { float: left }
+.fr { float: right }
+.m0a { margin: 0 auto }
+/*滚动条设置*/
+::-webkit-scrollbar-track-piece{
+    background-color:#f2f2f2;
+    -webkit-border-radius:0;
+}
+::-webkit-scrollbar{
+    width:12px;
+    height:12px;
+}
+::-webkit-scrollbar-thumb{
+    height:50px;
+    background-color:#999;
+    -webkit-border-radius:4px;
+    outline:2px solid #ffffff;
+    outline-offset:-2px;
+    border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover{
+    height:50px;
+    background-color:#9f9f9f;
+    -webkit-border-radius:4px;
+}
