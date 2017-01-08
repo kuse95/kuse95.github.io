@@ -12,7 +12,7 @@ table { border-collapse: collapse; border-spacing: 0 }
 .clearfix{*zoom:1 }
 .htxt{height:0;display:block;overflow:hidden }
 body{ font-family:'Microsoft Yahei'; background-color: #fafafa; font-size: 100% }
-img{width:100%;max-width: 100%;}
+img{max-width: 100%;}
 .fl { float: left }
 .fr { float: right }
 .m0a { margin: 0 auto }
