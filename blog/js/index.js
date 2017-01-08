@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var blogStaticUrl = "./blog";
-	var imgStaticUrl="./blog/images/"
+	var imgStaticUrl="./blog/"
 	$.ajax({
 		url:"./blog/data/index.json",
 		dataType:"json",
