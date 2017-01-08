@@ -5,7 +5,7 @@
 	},
 	"news":[
 		{
-			"ishot":true,
+			"ishot":"true",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -15,9 +15,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -27,9 +28,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -39,9 +41,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -51,9 +54,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -63,9 +67,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -75,9 +80,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -87,9 +93,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -99,9 +106,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -111,9 +119,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -123,9 +132,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -135,9 +145,10 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		},{
-			"ishot":false,
+			"ishot":"false",
 			"year":"2017",
 			"month":"01",
 			"day":"09",
@@ -147,7 +158,8 @@
 			"author":"ku涩",
 			"blogimg":"images/001.jpg",
 			"authotphoto":"images/001.jpg",
-			"like":0,
+			"like":"0",
+			"comment":"0"
 		}
 	]
 }
