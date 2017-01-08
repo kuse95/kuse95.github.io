@@ -57,9 +57,10 @@ $(document).ready(function() {
 			}
 		});
 	}
-	function init () {
+	function init() {
 		$(".news").empty();
 		addBlog();
 		addLink();
 	}
+	init();
 });
