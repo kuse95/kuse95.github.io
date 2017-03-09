@@ -11,7 +11,7 @@ $(document).ready(function() {
 					blogurl = blogStaticUrl+data.news[i].year+"/"+data.news[i].month+"/"+data.news[i].day+"/"+data.news[i].filename;
 					if(data.news[i].ishot == "true"){
 						newsHtml='<li class="fl hot">\
-									<a href="'+blogurl+'">\
+									<a data-src="'+blogurl+'">\
 										<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章插图">\
 										<span class="hot-close"></span>\
 									</a>\
@@ -19,7 +19,7 @@ $(document).ready(function() {
 						$(".news").prepend(newsHtml);
 					}else{
 						newsHtml= '<li class="fl item">\
-								<a href="'+blogurl+'">\
+								<a data-src="'+blogurl+'">\
 									<span class="imgbox">\
 										<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章配图">\
 									</span>\
@@ -58,8 +58,33 @@ $(document).ready(function() {
 			}
 		});
 	}
+	function addEvent() {
+		//菜单点击事件
+		$(".menu").on("click",function(e) {
+			console.log("123");
+			if($(".menu-close").css("display")=="none"){
+				$(".menu-open").css("display","none");
+				$(".menu-close").css("display","block");
+				$(".navmain").addClass("expan");
+			}else{
+				$(".menu-close").css("display","none");
+				$(".menu-open").css("display","block");
+				$(".navmain").removeClass("expan");
+			}
+		});
+		//标签选择
+		$(".tags").on("click","li",function(e) {
+			$(this).siblings().removeClass();
+			$(this).addClass("action");
+			//数据操作
+		});
+		//查看文章
+		$(".news").on("click","li",function(){
+			console.log($(this).find("a").attr("data-src"));
+		});
+	}
 	function init() {
-		$(".news").empty();
+		addEvent();
 		addBlog();
 		addLink();
 	}

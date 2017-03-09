@@ -24,9 +24,8 @@
 	position: absolute;
 	top: 8px;
 	right: 5px;
-	transition: all 300ms ease-in-out;
 }
-.meun-close{
+.menu-close{
 	display: none;
 }
 .navmain{
@@ -81,11 +80,13 @@
     	transition: background 0.25s ease-out 0s;
     	font-size: 1em;
 }
-.tags a:hover{
+.tags a:hover,
+.tags li.action>a{
 	background-color: #161616;
 	position: relative;
 }
-.tags a:hover:after{
+.tags a:hover:after,
+.tags li.action>a:after{
 	display: block;
 	content: "";
 	position: absolute;
@@ -241,6 +242,7 @@
 		left: 0;
 		top:60px;
 		background-color: #0a0a0a;
+		transition:all 300ms ease-in-out;
 	}
 	.navmain li{
 		width: 50%;
