@@ -1,12 +1,9 @@
 #数据结构
 {
-	"login":{
-		"name":"",
-		"password":""
-	},
 	"news":[
 		{
 			"ishot":"false",		//是否是热文 仅限一条热文
+			"tag":"",			//标签
 			"year":"",		//年
 			"month":"",		//月
 			"day":"",		//日

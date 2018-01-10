@@ -1,7 +1,6 @@
 /*默认样式*/
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0}
-body, button, input, select, textarea { font: tahoma, arial, \5b8b\4f53, sans-serif; line-height:1.5 }
-h1, h2, h3, h4, h5, h6 { font-size: 100% }
+body, button, input, select, textarea { font-family: inherit; line-height:1.5 }
 em{ font-style: normal }
 ul, ol { list-style: none }
 a { text-decoration: none;cursor: pointer; }
@@ -11,7 +10,7 @@ table { border-collapse: collapse; border-spacing: 0 }
 .clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden }
 .clearfix{*zoom:1 }
 .htxt{height:0;display:block;overflow:hidden }
-body{ font-family:'Microsoft Yahei'; background-color: #fafafa; font-size: 100% }
+body{ background-color: #fafafa;}
 img{max-width: 100%;}
 .fl { float: left }
 .fr { float: right }

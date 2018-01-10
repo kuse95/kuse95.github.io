@@ -1,6 +1,8 @@
 $(document).ready(function() {
-	var blogStaticUrl = "./blog/";
-	var imgStaticUrl="./lib/"
+	var blogStaticUrl = "./blog-text/",
+		imgStaticUrl="./lib/",
+		currentTag = null;
+
 	function addBlog() {
 		$.ajax({
 			url:"./blog/data/index.json",
@@ -10,7 +12,7 @@ $(document).ready(function() {
 				for (var i = data.news.length - 1; i >= 0; i--) {
 					blogurl = blogStaticUrl+data.news[i].year+"/"+data.news[i].month+"/"+data.news[i].day+"/"+data.news[i].filename;
 					if(data.news[i].ishot == "true"){
-						newsHtml='<li class="fl hot">\
+						newsHtml='<li class="fl hide hot" data-tags="'+data.news[i].tags.join()+'">\
 									<a data-src="'+blogurl+'">\
 										<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章插图">\
 										<span class="hot-close"></span>\
@@ -18,7 +20,7 @@ $(document).ready(function() {
 								</li>';
 						$(".news").prepend(newsHtml);
 					}else{
-						newsHtml= '<li class="fl item">\
+						newsHtml= '<li class="fl hide item" data-tags="'+data.news[i].tags.join()+'">\
 								<a data-src="'+blogurl+'">\
 									<span class="imgbox">\
 										<img src="'+imgStaticUrl+data.news[i].blogimg+'" alt="文章配图">\
@@ -43,6 +45,7 @@ $(document).ready(function() {
 						$(".news").append(newsHtml);
 					}	
 				};
+				hideOtherBlog();
 			}
 		});
 	}
@@ -58,10 +61,37 @@ $(document).ready(function() {
 			}
 		});
 	}
+	function addTags(){
+		$.ajax({
+			url:"./blog/data/tags.json",
+			dataType:"json",
+			success:function(data) {
+				$("nav .tags").empty();
+				for (var i = data.length - 1; i >= 0; i--) {
+					$("nav .tags").append('<li><a data-tag="'+data[i]+'">'+data[i]+'</a></li>');
+				};
+			}
+		});
+	}
+	function hideOtherBlog(){
+		var lilist = $(".news li"),
+			itemTags = null;
+		if(currentTag === null){
+			lilist.removeClass("hide");
+			return;
+		};
+		for (var i = 0; i < lilist.length; i++) {
+			itemTags = lilist.eq(i).attr('data-tags').split(',');
+			if(itemTags.indexOf(currentTag)!==-1&&lilist.eq(i).hasClass("hide")){
+				lilist.eq(i).removeClass("hide");
+			}else if(itemTags.indexOf(currentTag)===-1&&!lilist.eq(i).hasClass("hide")){
+				lilist.eq(i).addClass("hide");
+			}
+		}
+	}
 	function addEvent() {
 		//菜单点击事件
 		$(".menu").on("click",function(e) {
-			console.log("123");
 			if($(".menu-close").css("display")=="none"){
 				$(".menu-open").css("display","none");
 				$(".menu-close").css("display","block");
@@ -74,17 +104,36 @@ $(document).ready(function() {
 		});
 		//标签选择
 		$(".tags").on("click","li",function(e) {
-			$(this).siblings().removeClass();
-			$(this).addClass("action");
-			//数据操作
+			if($(this).hasClass("action")){
+				$(this).removeClass();
+				currentTag = null;
+			}else{
+				$(this).siblings().removeClass();
+				$(this).addClass("action");
+				currentTag = $(this).find("a").attr("data-tag");
+			}
+			hideOtherBlog();
 		});
 		//查看文章
 		$(".news").on("click","li",function(){
-			console.log($(this).find("a").attr("data-src"));
+			var bloglink = $(this).find("a").attr("data-src") + '.md';
+			console.log(bloglink);
+			$.ajax({
+				type:'GET',
+				url:bloglink,
+				success: function(data){
+					$(".article .content").html(markdownit().render(data));
+					$(".article").addClass("show");
+					var setMainHeight = setTimeout(function(){
+						$(".main").addClass("hide");
+					},600);
+				}
+			})
 		});
 	}
 	function init() {
 		addEvent();
+		addTags();
 		addBlog();
 		addLink();
 	}
