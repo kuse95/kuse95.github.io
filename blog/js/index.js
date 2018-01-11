@@ -2,12 +2,16 @@ $(document).ready(function() {
 	var blogStaticUrl = "./blog-text/",
 		imgStaticUrl="./lib/",
 		currentTag = null;
-
 	function addBlog() {
 		$.ajax({
 			url:"./blog/data/index.json",
 			dataType:"json",
 			success:function(data) {
+				data.news.sort(function(a,b){
+					var aTime = new Date(a.year+'-'+a.month+'-'+a.day),
+						bTime = new Date(b.year+'-'+b.month+'-'+b.day);
+					return aTime-bTime;
+				})
 				var newsHtml,blogurl;
 				for (var i = data.news.length - 1; i >= 0; i--) {
 					blogurl = blogStaticUrl+data.news[i].year+"/"+data.news[i].month+"/"+data.news[i].day+"/"+data.news[i].filename;
@@ -18,7 +22,7 @@ $(document).ready(function() {
 										<span class="hot-close"></span>\
 									</a>\
 								</li>';
-						$(".news").prepend(newsHtml);
+						$(".blogs .news").prepend(newsHtml);
 					}else{
 						newsHtml= '<li class="fl hide item" data-tags="'+data.news[i].tags.join()+'">\
 								<a data-src="'+blogurl+'">\
@@ -42,7 +46,7 @@ $(document).ready(function() {
 									</div>\
 								</a>\
 							</li>';
-						$(".news").append(newsHtml);
+						$(".blogs .news").append(newsHtml);
 					}	
 				};
 				hideOtherBlog();
@@ -115,9 +119,8 @@ $(document).ready(function() {
 			hideOtherBlog();
 		});
 		//查看文章
-		$(".news").on("click","li",function(){
+		$(".blogs .news").on("click","li",function(){
 			var bloglink = $(this).find("a").attr("data-src") + '.md';
-			console.log(bloglink);
 			$.ajax({
 				type:'GET',
 				url:bloglink,
@@ -130,12 +133,40 @@ $(document).ready(function() {
 				}
 			})
 		});
+		//关闭文章
+		$(".article-close").on("click",function(e){
+			$(".main").removeClass("hide");
+			$(".article").removeClass("show");
+		});
+		//路由变化
+		$(window).on("hashchange", function() {
+			laodPage(getHash());
+        });
+	}
+	function getHash(){
+		return location.hash.split('?')[0].split('#')[1];
+	}
+	function laodPage(page){
+		var pageDom = $('.'+(page?page:'home')),
+			pageStatus = pageDom.attr('data-status');
+		pageDom.siblings().addClass('hide');
+		pageDom.removeClass('hide');
+		if(pageStatus === 'loaded'){
+			return;
+		}
+		switch(page){
+			case 'blogs':
+				addTags();
+				addBlog();
+				break;
+			default:
+		}
+		pageDom.attr('data-status','loaded');
 	}
 	function init() {
-		addEvent();
-		addTags();
-		addBlog();
 		addLink();
+		addEvent();
+		laodPage(getHash());
 	}
 	init();
 });
