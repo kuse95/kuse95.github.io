@@ -252,7 +252,11 @@
 .article .content{
 	max-width: 740px;
 }
+.article.show .article-close{
+	display: block;
+}
 .article-close{
+	display: none;
 	background-color: #000;
 	position: absolute;
 	top: 25px;
