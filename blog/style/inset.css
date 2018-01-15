@@ -1,18 +1,110 @@
-.home{
-	position: fixed;
-	left: 205px;
-	right: 0;
-	top: 0;
-	bottom: 0;
+.home {
+    position: fixed;
+    left: 205px;
+    right: 0;
+    top: 0;
+    bottom: 0;
     background: #f5cfbe;
 }
-.inset-box{
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-.inset-box .note{
+
+.inset-box {
     position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -450px;
+    margin-left: -800px;
+    width: 1600px;
+    height: 900px;  
+}
+
+.computer{
+    width: 400px;
+    text-align: center;
+    position: absolute;
+    bottom: 336px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 1;
+}
+
+.computer .display{
+    width: 400px;
+    height: 331px;
+}
+.computer .display-animation{
+    position: absolute;
+    top:19px;
+    left: 20px;
+    width: 360px;
+    height: 218px;
+    overflow: hidden;
+}
+.computer .display-animation .login{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-radius: 50%;
+    background-color: #00f;
+    background-image: url(../../lib/images/001.jpg);
+    background-size: auto 100%;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transform:scale(1,1);
+    transition: transform .4s ease-in;
+}
+.computer .display-animation .top,
+.computer .display-animation .bottom{
+    width: 200%;
+    height: 200%;
+    margin-left: -50%;
+    margin-top: -90%;
+    background-color: #667aa6;
+}
+.computer .display-animation .bottom{
+    margin-top: 0;
+}
+
+.computer .display-animation.action .login,
+.computer .display-animation:hover .login{
+    transform:scale(0,0);
+}
+
+.computer .display-animation.action .top,
+.computer .display-animation:hover .top{
+    animation: topmove 1.6s;
+    animation-fill-mode: forwards;
+}
+.computer .display-animation.action .bottom,
+.computer .display-animation:hover .bottom{
+    animation: bottommove 1.6s;
+    animation-fill-mode: forwards;
+}
+.computer .keyword{
+    width: 380px;
+    height: 37px;
+}
+
+.inset-box .desk{
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 146px;
+    height: 296px;
+    background-image: url(../images/desk.jpg);
+    background-size: auto 100%;
+}
+
+.note {
+    position: absolute;
+    z-index: 99;
     left: 20px;
     width: 30px;
     padding: 18px 10px 14px;
@@ -20,7 +112,8 @@
     color: #fff;
     text-align: center;
 }
-.inset-box .note:after{
+
+.note:after {
     position: absolute;
     left: 0;
     bottom: -20px;
@@ -32,24 +125,44 @@
     border-right: 25px solid transparent;
     border-top: 20px solid #c20d26;
 }
-.inset-box .desk{
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    right: 0;
-    bottom: 100px;
-    height: 347px;
-    background-image: url(../images/desk.jpg);
-    background-size: auto 100%;
-}
-/*适配平板设备*/
-@media screen and (max-width: 960px){
-	.home{
-		left: 0;
-		top: 60px;
-	}
-}
-/*适配手机*/
-@media screen and (max-width:600px){
 
+@keyframes topmove{
+    0%{
+        transform: rotate(0deg) translate(0,0);
+    }
+    25%{
+        transform: rotate(-45deg) translate(-22%,-14%);
+    }
+    100%{
+        transform: rotate(-45deg) translate(-22%,-62%);
+    }
+}
+@keyframes bottommove{
+    0%{
+        transform: rotate(0deg) translate(0,0);
+    }
+    25%{
+        transform: rotate(-45deg) translate(22%,14%);
+    }
+    100%{
+        transform: rotate(-45deg) translate(22%,62%);
+    }
+}
+
+/*适配平板设备*/
+
+@media screen and (max-width: 960px) {
+    .home {
+        left: 0;
+    }
+    .note {
+        top: 60px;
+    }
+}
+
+
+/*适配手机*/
+
+@media screen and (max-width:600px) {
+   
 }
