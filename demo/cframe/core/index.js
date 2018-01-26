@@ -92,7 +92,13 @@ window.onload = function(){
 			
 
 		evt = "onorientationchange" in window ? "orientationchange" : "resize";
-		window.addEventListener(evt, SizeInit, false);
+		window.addEventListener(evt, function(e){
+			if(window.orientation===0||window.orientation===90){
+				window.location.reload(true);
+			}else{
+				SizeInit();
+			}
+		},false);
 	}
 	else{
 		canvas.addEventListener('mousedown', doMouseDown, false);
@@ -155,7 +161,6 @@ function SizeInit(){
 	
 	SizeX= tempContext.canvas.width;
 	SizeY= tempContext.canvas.height;
-	
 	if(SizeX<SizeY){
 		temps= SizeY;
 		SizeY=SizeX;
