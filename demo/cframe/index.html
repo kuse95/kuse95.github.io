@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>HTML5 Canvas Demo</title>
-	<script>
-	  if ("wView" in window) {
-	    window.wView.allowsInlineMediaPlayback = "YES";
-	    window.wView.mediaPlaybackRequiresUserAction = "NO";
-	  }
-	</script>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>canvas demo</title>
 </head>
 <body style="height: 100%;width: 100%;margin: 0;padding: 0;">
 	<div id="my_painter"> 
-		<canvas id="event_canvas" style="background-color:#000;height: 100%;width: 100%;margin: 0;padding: 0;display: block;"></canvas> 
+		<canvas id="event_canvas" style="background-color:#000;height: 100%;width: 100%;margin: 0;padding: 0;display: block;">
+		</canvas> 
 	</div>
-	<script  type="text/javascript">
-		document.oncontextmenu=function() {
-			retuen false;
-		};
+	<script type="text/javascript">
+		document.oncontextmenu = function(){
+			return false;
+		} 
 	</script>
-	<script type="text/javascript" src="core/index.js"></script>
+	<script  type="text/javascript" src="core/index.js"></script>
 </body>
 </html>
