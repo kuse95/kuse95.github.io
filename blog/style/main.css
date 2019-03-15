@@ -89,6 +89,7 @@
     top: 0;
     bottom: 0;
     background: #f5cfbe;
+    overflow: hidden;
 }
 .page.hide {
     display: none;
