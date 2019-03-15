@@ -1,10 +1,10 @@
-.home {
-    position: fixed;
-    left: 205px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: #f5cfbe;
+.main{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #f5cfbe;
 }
 
 .inset-box {
@@ -50,7 +50,7 @@
     margin-left: -25px;
     border-radius: 50%;
     background-color: #00f;
-    background-image: url(../../lib/images/001.jpg);
+    background-image: url(../../../lib/images/001.jpg);
     background-size: auto 100%;
     border: 1px solid #fff;
     text-align: center;
@@ -152,17 +152,11 @@
 /*适配平板设备*/
 
 @media screen and (max-width: 960px) {
-    .home {
-        left: 0;
-    }
-    .note {
-        top: 60px;
-    }
 }
 
 
 /*适配手机*/
 
 @media screen and (max-width:600px) {
-   
+  
 }

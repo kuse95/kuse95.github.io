@@ -82,6 +82,14 @@
     overflow: hidden;
 }
 
+.home {
+    position: fixed;
+    left: 205px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f5cfbe;
+}
 .page.hide {
     display: none;
 }
@@ -365,6 +373,9 @@
         width: 96%;
         padding-left: 0;
         margin: 0 auto;
+    }
+    .home {
+        left: 0;
     }
     .tags li {
         width: 16.66%;
