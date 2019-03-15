@@ -377,6 +377,7 @@
     }
     .home {
         left: 0;
+        top: 60px;
     }
     .tags li {
         width: 16.66%;
