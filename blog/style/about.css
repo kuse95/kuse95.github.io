@@ -435,7 +435,7 @@ ol {
 
 .pro-exp .pro-exp_list .exp-list_title .exp-project_name,
 .pro-exp .pro-exp_list .exp-list_title .exp-project_company span {
-  max-width: 222px;
+  max-width: 127px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
