@@ -32,10 +32,8 @@
                     <span class="basic-job">资深前端开发工程师</span>
                 </p>
                 <p class="basic-self">
-                    <span id="workExperience" class="basic-exp"> / </span>
-                    <span class="basic-edu">本科
-                        /
-                    </span>
+                    <span id="workExperience" class="basic-exp">8年工作经验 / </span>
+                    <span class="basic-edu">本科 / </span>
                     <span id="age" class="basic-age">27岁</span>
                 </p>
                 <p>
@@ -368,10 +366,10 @@
     <script>
         $(document).ready(function(){
             function toYear(num){
-                return Math.abs(parseInt(parseInt(d / 1000) / (24 * 60 * 60) / 365));
+                return Math.abs(parseInt(parseInt(num / 1000) / (24 * 60 * 60) / 365));
             }
             var now = Date.now();
-            $('#workExperience').html(toYear(new Date('2014-06').getTime() - now) + "年工作经验")
+            $('#workExperience').html(toYear(new Date('2014-06').getTime() - now) + "年工作经验 / ")
             $('#age').html(toYear(new Date('1995-06').getTime() - now)+'岁');
         })
     </script>
