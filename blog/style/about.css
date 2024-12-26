@@ -604,6 +604,9 @@ main {
 
 /***** 图片作品 end ****/
 
+#loading {
+  display: none;
+}
 /* 遮罩层 */
 .loading-overlay {
   position: fixed;
