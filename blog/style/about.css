@@ -144,11 +144,15 @@ ol {
   list-style: none;
 }
 
-#container {
+main {
   width: 720px;
   margin: 50px auto 54px auto;
   border: 1px solid #e3ebe9;
   border-radius: 5px;
+}
+
+#container{
+  width: 100%;
 }
 
 .mr-template {
@@ -193,6 +197,18 @@ ol {
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid #E3EBE9;
   display: flex;
+  position: relative;
+}
+.basic .actions {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  opacity: 0;
+  transition: all .3s ease-in;
+}
+
+#container:hover .basic .actions{
+  opacity: 1;
 }
 
 .basic .basic-photo {
