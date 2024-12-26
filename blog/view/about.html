@@ -367,7 +367,7 @@
     <script>
         window.onload = function() {
             var dom = document.getElementById('workExperience');
-            var d = new Date('2014-06') - Date.now();
+            var d = new Date('2014-06').getTime() - Date.now();
             var year = parseInt(parseInt(d / 1000) / (24 * 60 * 60) / 365);
             dom.innerHtml = year + "年工作经验";
         }
