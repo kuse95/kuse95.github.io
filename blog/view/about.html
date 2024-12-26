@@ -408,16 +408,38 @@
             <!-- /图片作品 -->
         </div>
     </main>
+    <div id="loading" class="loading-overlay">
+        <div class="loading-container">
+          <!-- 加载动画 -->
+          <div class="loading-spinner"></div>
+          <!-- 提示文案 -->
+          <div class="loading-text">加载中...</div>
+        </div>
+      </div>
     <script>
         $(document).ready(function () {
             function toYear(num) {
                 return Math.abs(parseInt(parseInt(num / 1000) / (24 * 60 * 60) / 365));
             }
+            function showLoading(message) {
+                var msg = $('#loading').find('.loading-text');
+                msg[0].innerHTML = message || "加载中...";
+                $('#loading').show();
+            }
+            function hideLoading(){
+                $('#loading').hide();
+            }
             var now = Date.now();
             $('#workExperience').html(toYear(new Date('2014-06').getTime() - now) + "年工作经验 / ")
             $('#age').html(toYear(new Date('1995-06').getTime() - now) + '岁');
             $('#downloadPdf').on('click', function(){
-                html2pdf($('#container')[0], { filename: "李林-前端工程师.pdf" });
+                var opt = { filename: "李林-前端工程师.pdf", pagebreak: { mode: 'avoid-all' }, margin:[8,0], html2canvas: { scale: 1.5 } };
+                showLoading('正在生成简历中...');
+                html2pdf($('#container')[0], opt).then(function(){
+                    hideLoading();
+                }).catch(function(){
+                    hideLoading();
+                });
             });
         })
     </script>
