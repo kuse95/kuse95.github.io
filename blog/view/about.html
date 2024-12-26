@@ -31,7 +31,7 @@
                     <span class="basic-job">资深前端开发工程师</span>
                 </p>
                 <p class="basic-self">
-                    <span class="basic-exp">8年工作经验 / </span>
+                    <span id="workExperience" class="basic-exp"> / </span>
                     <span class="basic-edu">大专
                         /
                     </span>
@@ -364,6 +364,12 @@
         <!-- /图片作品 -->
     </div>
     <script type="text/javascript" crossorigin="anonymous" src="https://www.lagou.com/upload/oss.js?v=1010"></script>
+    <script>
+        window.onload = function() {
+            var dom = document.getElementById('workExperience');
+            dom.innerHtml = "8年工作经验";
+        }
+    </script>
 </body>
 
 </html>
